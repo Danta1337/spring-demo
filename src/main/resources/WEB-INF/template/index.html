@@ -5,6 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-    <h1 th:text="${userName}"/>
+    <h1 id="title" th:text="${userName}"/>
+    <button onclick="click()">test</button>
+    <script>
+        function click() {
+            fetch("/getDefaultUser").then(data => document.getElementById("title").value=data);
+        }
+    </script>
 </body>
 </html>
